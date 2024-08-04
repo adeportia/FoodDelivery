@@ -1,0 +1,79 @@
+<div class="" style="width: 100%; height:30px;display:flex;justify-content:center; align-items:center;"><h5 style="color: {{this.color}}; font-size:22px;">{{this.text}}</h5></div>
+    <section class="main">
+        <div class="main_form_structure">
+            <!-- main form section -->
+            <div class="main_form_fonts">
+                <!-- register acc -->
+                <div class="select_unregister_accounts">
+                    <h2 class="select_unregister_title">I don't have an account</h2>
+                    <p class="select_unregistered-text">Welcome Newly Cheerished Customer!. Please Kindly Create an account and Login to the System
+                        and Make your Orders!</p>
+                    <button class="unregisterd_signup_btn" id="btn_signup">Sign up</button>
+                </div>
+
+                <!-- login acc -->
+                <div class="select_registerd_accounts">
+                    <h2 class="select_registered-title">Have an account</h2>
+                    <p class="select_registered-text">Welcome Cheerished Customer Please Kindly Login and make orders
+                        </p>
+                    <button class="registerd_signin_btn" id="btn_login">Sign in</button>
+                </div>
+            </div>
+            <!-- main form section end -->
+
+            <!-- top layout form field start -->
+            <div class="select_form_option" id="select_form_option">
+                <div class="user_forms-login">
+                    <h2 class="forms_title">Sign in</h2>
+                    <form class="forms_form" method="post" action="/Login">
+                        <div class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="email" placeholder="Email" class="forms_field-input" required autofocus name="email" />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" class="forms_field-input" required  name="password"/>
+                            </div>
+
+
+                               
+
+                        </div>
+                        <div class="forms_buttons">
+                            <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+                            <input type="submit" value="Log In" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+                <div class="user_forms-signup">
+                    
+                    <h2 class="forms_title">Sign Up</h2>
+                    <form class="forms_form" method="post" action="/signup" enctype="multipart/form-data">
+                        <div class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="Full Name" class="forms_field-input" required name="fullname" />
+                            </div>
+                            <div class="forms_field">
+                                <input type="email" placeholder="Email" class="forms_field-input" required  name="email"/>
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" class="forms_field-input" required name="password" />
+                            </div>
+
+                             <div class="forms_field">
+                                <input type="tel" placeholder="Momo Telephone Number" class="forms_field-input" required  name="telephone"/>
+                            </div>
+
+                            <div class="forms_field">
+                                <span>Upload Image</span>
+                                <input type="file" placeholder="Password" class="forms_field-input" required name="Image" />
+                            </div>
+                        </div>
+                        <div class="forms_buttons">
+                            <input type="submit" value="Sign up" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- top layout form field end -->
+        </div>
+    </section>

@@ -1,0 +1,27 @@
+<h5 style="color: green; font-weight:bolder;">PLEASE MAKE SURE YOU SEE THE "PAYMENT SUCCESSFUL" PAGE FOR BETTER PAYMENT VERIFICATION AFTER PAYMENT</h5>
+<div class="column" style="display: flex; flex-direction:column; gap:15px;">
+
+    <img src="/img/cash2.jfif" alt="" srcset="" style="object-fit: cover;">
+
+<form id="paymentForm" action="/AcceptPayment" method="post">
+       
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="text" id="amount" required readonly value="{{this.data}}" name="amount" />
+        </div>
+        <div class="form-group">
+          <label for="first-name">Email</label>
+          <input type="email" id="first-name" name="email" value="{{this.data3}}" readonly />
+        </div>
+        <div class="form-group">
+          <label for="last-name">FullName</label>
+          <input type="text"  name="FullName" value="{{this.data2}}" readonly />
+        </div>
+        <div class="form-submit">
+          <button type="submit"> Pay </button>
+        </div>
+      </form>
+
+
+
+      </div>

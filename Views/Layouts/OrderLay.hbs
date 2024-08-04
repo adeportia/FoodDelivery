@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Page</title>
+    <link rel="stylesheet" href="/orderstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            
+            <div class="dropdown">
+                <button class="dropbtn">☰</button>
+                <div class="dropdown-content">
+                    <a href="/">Home</a>
+                    <a href="/">Menu</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <h1>Order something</h1>
+            <form action="/searchFood" method="post">
+            <div class="search-bar">
+                <input type="text" placeholder="Search Food By Name" name="foodName">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            </form>
+            <div class="cart-icon">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="cart-notification" style="color: white;">{{this.itemL}}</span>
+                
+                
+            </div>
+            
+
+            
+            <div class="profile">
+                <img src="/img/{{this.ImageUrl}}" alt="Profile Picture" style="object-fit: cover; display:flex; justify-content:center;align-items:center;">
+                <span class="pname">{{this.username}}</span>
+                
+                <div class="profile-dropdown-content">
+                    <a href="/logout">Logout</a>
+                </div>
+                
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </header>
+
+        <nav class="category-nav">
+            <!--
+            <button class="category-btn active">
+                <img src="/orderimg/food-2.png" alt="All">
+                All
+            </button>
+            -->
+            {{#each restaurants}}
+            <a href="/fetchFood/?id={{this.id}}" class="" style="list-style: none; text-decoration:none">
+            <button class="category-btn">
+                <img src="/img/{{this.FoodSpecializedImage}}" alt="{{this.RestaurantName}}">
+                {{this.RestaurantName}}
+            </button>
+            </a>
+            {{/each}}
+    
+        </nav>
+{{{body}}}
+    </div>
+
+    <script src="/orderscript.js"></script>
+</body>
+</html>

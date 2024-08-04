@@ -1,0 +1,66 @@
+         
+          <input type="hidden" value="{{this.userId}}" id="userId">
+        <main>
+            <section class="popular-dishes">
+                <h2>Popular dishes</h2>
+                <div class="dishes">
+                    {{#each foods}}
+                 
+                    <div class="dish" data-name="{{this.FoodName}}" data-price="{{this.FoodPrice}}" data-id ="{{this.id}}" >
+                        <img src="/img/{{this.FoodImage}}" alt="hero-pizza">
+                        <h3>{{this.FoodName}}</h3>
+                        <p>GH₵ {{this.FoodPrice}} ★</p>
+                        <p>{{this.RestaurantName}}</p>
+                      <a href="/addToCart/?id={{this.id}}" class="" style="text-decoration: none;"> <button class="add-to-cart-btn">Add to Cart</button></a>
+                    </div>
+                 
+                    {{/each}}
+
+
+                     
+                 
+                    
+                   
+                   
+                   
+                 
+                 
+                </div>
+            </section>
+
+            <aside class="order-summary">
+                <h2>My orders</h2>
+                {{#if errorOrder}}
+                <h2 style="color: red;">{{this.errorOrder}}</h2>
+                {{/if}}
+
+                 <div id="cart-items" style="display: flex; flex-direction:column;">
+                    {{#each data}}
+                      <div class="row" style="display: flex; width:100%; gap:70px ">
+                        <h5 style=" align-self:center; font-size:16px;">{{this.name}}</h5>
+                        <h5 style=" align-self:center;font-size:16px;">GH₵{{this.price}}</h5>
+                        <input type="text" value="{{this.quantity}}" readonly style="width: 30px; height:30px; align-self:center; font-weight:bolder; text-align:center; border-radius:10px; outline:none; border:none;">
+                         <div class="cart-item-controls">
+            <a href="/decrease/?id={{this.id}}" class="" style="text-decoration: none; list-style: none;"><button class="decrease-quantity" style="align-self: center;">-</button></a>
+          <a href="/increase/?id={{this.id}}" class=""  style="list-style: none; text-decoration:none;"><button class="increase-quantity"  style="align-self: center;">+</button></a>
+        </div>
+                      </div>
+                      {{/each}}
+                </div>
+ <div class="total">
+                    <p>Total Amount: <span id="total-amount" style="font-size:16px; font-weight:bolder;">GH₵{{this.totalCost}}</span></p>
+                </div>
+
+
+                <form action="/ProceedToPayment" method="post">
+                <div class="delivery-location">
+                    <input type="text" id="deliveryLocationInput" placeholder="Enter your delivery location" required name="location">
+                </div>
+                
+             
+          <button type="submit" class="checkout-btn" id="checkoutBut">Proceed To Payment</button> 
+                
+            </form>
+                
+            </aside>
+        </main>

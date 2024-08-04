@@ -1,0 +1,23 @@
+       <div class="restaurants-container" id="resman">
+
+        {{#each restaurants }}
+            <div class="restaurant">
+                <!--<p class="discount">50% Off</p>-->
+                <div class="restaurant-thumbnail">
+                    <img src="/img/{{this.FoodSpecializedImage}}" class="restaurant-img" alt="">
+                </div>
+                <div class="restaurant-body">
+                    <h3 class="restaurant-name">{{this.RestaurantName}}</h3>
+                    <p class="menu">{{this.FoodSpecialized}}</p>
+                    <p class="place">{{this.Location}}</p>
+                    <span class="rating">5.0 <i class="fa-solid fa-star"></i> </span>
+                </div>
+            </div>
+            {{/each}}
+
+            
+
+    
+
+        
+        </div>
