@@ -31,11 +31,11 @@ app.use(cookieParser())
 app.use(express.json())
 
 
-const connection = mysql.createConnection({
-    host:process.env.host,
-    user:process.env.user,
-    password:process.env.passwords,
-    database:process.env.database,
+ const connection = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"",
+    database:"foodorder",
 })
 
 connection.connect((err)=>{
